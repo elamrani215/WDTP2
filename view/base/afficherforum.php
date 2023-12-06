@@ -4,7 +4,7 @@
 
 require('db/connex.php'); // Inclut le fichier de connexion à la base de données.
 
-$id = mysqli_real_escape_string($connex, $_GET['id']); // Nettoie la variable 'id' obtenue via GET pour prévenir les injections SQL.
+$id = mysqli_real_escape_string($connex, $_post['id']); // Nettoie la variable 'id' obtenue via GET pour prévenir les injections SQL.
 
 $sql = "SELECT * FROM forum"; // Prépare une requête SQL pour sélectionner tous les enregistrements de la table 'forum'.
 $result = mysqli_query($connex, $sql); // Exécute la requête SQL.
